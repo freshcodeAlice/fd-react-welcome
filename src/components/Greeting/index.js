@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css';
 
 class Greeting extends React.Component{
     constructor(props){
@@ -19,7 +20,7 @@ class Greeting extends React.Component{
         const {userName} = this.props;
         const greetingText = isGreeting ? "Hello" : "Bye-bye";
         return (
-            <div>
+            <div className='greeting'>
                 <h2 onClick={this.changeGreeting}>{greetingText}, {userName}</h2>
             </div>
         )
