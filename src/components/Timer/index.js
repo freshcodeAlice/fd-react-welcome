@@ -36,7 +36,7 @@ class Timer extends Component {
         const {time} = this.state;
         return (
             <div>
-               <h1>{format(time, 'hh:mm:ss')}</h1> 
+               <h1>{format(time, 'HH:mm:ss')}</h1> 
                <button onClick={this.stop}>Stop</button>
                <button onClick={this.start}>Start</button>
             </div>
