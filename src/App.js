@@ -1,6 +1,7 @@
 import React from "react";
 import UserDashboard from "./components/UserDashboard";
 import Timer from './components/Timer';
+import Scene from './components/Scene';
 
 class App extends React.Component {
     constructor(props){
@@ -12,9 +13,9 @@ class App extends React.Component {
 
     render () {
         return (
-            <div>
-             {this.state.isOn ? <Timer /> : null}
-           </div>
+           
+            <Scene />
+
         )
     }
 }
