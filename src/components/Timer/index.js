@@ -5,7 +5,8 @@ class Timer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: new Date(0,0,0,0,0,0)
+            time: new Date(0,0,0,0,0,0),
+            isRunning: false
         }
         this.intervalId = null;
     }
@@ -15,7 +16,8 @@ class Timer extends Component {
             const {time} = this.state;
         const newdate = addSeconds(time, 1);
             this.setState({
-                time: newdate
+                time: newdate,
+                isRunning: true
             })
             
         }, 1000);
@@ -30,15 +32,33 @@ class Timer extends Component {
 
     stop = () => {
         clearInterval(this.intervalId);
+        this.setState({
+            isRunning: false
+        })
+    }
+
+    reset = () => {
+        this.setState({
+            time: new Date(0,0,0,0,0,0)
+        })
+    }
+
+    clickHandler = () => {
+        const {isRunning} = this.state;
+        if(isRunning) {
+            this.stop();
+        } else {
+            this.start();
+        }
     }
 
     render() {
-        const {time} = this.state;
+        const {time, isRunning} = this.state;
         return (
             <div>
                <h1>{format(time, 'HH:mm:ss')}</h1> 
-               <button onClick={this.stop}>Stop</button>
-               <button onClick={this.start}>Start</button>
+               <button onClick={this.clickHandler}>{ isRunning ? 'Stop' : 'Start'}</button>
+               <button onClick={this.reset}>Clear</button>
             </div>
         );
     }
