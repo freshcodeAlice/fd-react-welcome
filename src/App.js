@@ -1,5 +1,5 @@
 import React from "react";
-import LoginForm from './components/LoginForm'
+import TodoList from './components/TodoList';
 
 class App extends React.Component {
     constructor(props){
@@ -11,7 +11,7 @@ class App extends React.Component {
 
     render () {
         return (
-           <LoginForm />
+           <TodoList />
         )
     }
 }
