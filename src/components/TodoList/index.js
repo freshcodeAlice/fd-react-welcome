@@ -10,11 +10,9 @@ class TodoList extends Component {
         }
     }
     
-   
-
     mapList = () => {
         const {list} = this.state;
-       return list.map(elem => <TodoItem text={elem.body} key={elem.id}/>);
+       return list.map(elem => <TodoItem text={elem.body} key={elem.id} id={elem.id}/>);
     }
     
     addNewItem = (data) => {
