@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './TodoForm.module.css';
+import cx from 'classnames';
 
 
 class TodoForm extends Component {
@@ -36,10 +37,10 @@ class TodoForm extends Component {
 
     render() {
         const {todo, isInputValid} = this.state;
-        const cnames = cx({
-
-        })
- //       const cnames = `${styles.input} ${isInputValid ? [styles.valid] : [styles.invalid]}`
+        const cnames = cx([styles.input], {
+            [styles.valid]: isInputValid,
+            [styles.invalid]: !isInputValid
+        });
         return (
             <form onSubmit={this.submitHandler} >
             <input 
@@ -56,34 +57,6 @@ class TodoForm extends Component {
 }
 
 
-/*
-objectClassNames = {
-    className1: true,
-    className2: false,
-    className3: true
-} ---> 'className1 className3';
-
-*/
-
-function cx (objectClassNames){
-   return Object
-   .entries(objectClassNames)
-   .filter(([cln, condition]) => condition)
-   .map(([cln, condition]) => cln)
-   .join(' ');
-}
-
-/*
-1. Перетворити об'єкт в масив з масивами - Object.entries()
-{} -> [[className1, true], [className2, false], [className3, true]]
-2. Відфільтрувати масив за певною умовою: там, де другий елемент масиву (кортежу) - true - нам підходить
-[[className1, true], [className2, false], [className3, true]] -> [[className1, true], [className3, true]]
-3. Перетворити масив з масивами на масив, який містить тільки перші елементи підмасивів
-[[className1, true], [className3, true]] -> [className1, className3]
-4. Об'єднати цей масив у рядок
-[className1, className3] -> 'className1, className3'
-
-*/
 
 
 
