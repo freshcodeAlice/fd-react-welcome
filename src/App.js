@@ -1,10 +1,5 @@
 import React from "react";
-import FlexContainer from "./components/FlexContainer";
-import Column from "./components/Grid/Column";
-import Container from "./components/Grid/GridContainer";
-import Row from "./components/Grid/Row";
-import Header from "./components/Header";
-import styles from './App.module.css';
+import ImageWrapper from "./components/ImageWrapper";
 
 class App extends React.Component {
     constructor(props){
@@ -14,13 +9,13 @@ class App extends React.Component {
     render () {
 
         return (
-         <FlexContainer fd="row" jc="space-between" ai="center">
-            <div className={styles.box}> 1 </div>
-            <div className={styles.box}> 2 </div>
-            <div className={styles.box}> 3 </div>
-            <div className={styles.box}> 4 </div>
-            <div className={styles.box}> 5 </div>
-         </FlexContainer>
+        <ImageWrapper
+            width="200px"
+            height="300px"
+            title="My super picture"
+        >
+            <img src='https://ichef.bbci.co.uk/news/999/cpsprodpb/15951/production/_117310488_16.jpg' />
+        </ImageWrapper>
         )
     }
 }
