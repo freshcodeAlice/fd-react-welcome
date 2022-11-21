@@ -13,6 +13,11 @@ const deleteHandler = () => {
     );
 }
 
+TodoItem.defaultProps = {
+    text: 'Default text',
+    deleteCallback: ()=>{},
+    id: 0
+}
 
 TodoItem.propTypes = {
     id: PropTypes.number.isRequired,

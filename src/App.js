@@ -7,10 +7,18 @@ class App extends React.Component {
         super(props);
     }
 
+
+    delete = () => {
+        console.log('delete callback')
+    }
+
     render () {
 
         return (
+            <>
+            <TodoItem deleteCallback={this.delete}/>
             <TodoItem />
+            </>
         )
     }
 }
