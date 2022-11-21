@@ -1,5 +1,6 @@
 import React from "react";
 import TodoItem from './components/TodoList/TodoItem';
+import UserCard from "./components/UserCard";
 
 
 class App extends React.Component {
@@ -16,8 +17,7 @@ class App extends React.Component {
 
         return (
             <>
-            <TodoItem deleteCallback={this.delete}/>
-            <TodoItem />
+           <UserCard/>
             </>
         )
     }
