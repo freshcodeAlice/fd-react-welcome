@@ -1,4 +1,5 @@
 import React from "react";
+import WindowSizer from "./components/WindowSizer";
 
 
 
@@ -10,25 +11,12 @@ class App extends React.Component {
 
         return (
             <>
-            <p>lorem ipsum dolor sit amet</p>
-            <button onClick={()=>{
-                window.navigator.clipboard.writeText('ANOTHER TEXT')
-                .then((data) => {
-                    console.log(data)
-                })
-            }}>Copy it!</button>
-
-
-                <button onClick={()=>{
-                window.navigator.clipboard.readText()
-                .then((data) => {
-                    console.log(data)
-                })
-            }}>Read the buffer!</button>
+            <WindowSizer />
             </>
         )
     }
 }
 
 export default App;
+
 
