@@ -27,32 +27,10 @@ class WindowSizer extends Component {
 
 
     render() {
-
-    
-        const {x,y} = this.state;
-        return (
-        <section>
-            <p>Current width: {x}px</p>
-            <p>Current height: {y}px</p>
-        </section>
-        );
+        return this.props.children(this.state);
+     
     }
 }
 
 export default WindowSizer;
 
-
-/*
-
-Створіть компонент WindowResizer, який відображає на сторінці
-    <section>
-        Current width: ....px
-        Current height: ...px
-    </section>
-
-Ширина і висота вьюпорта (видимої частини екрану)
-При зміні розміру екрану цифри мають змінюватись
-
-
-
-*/
