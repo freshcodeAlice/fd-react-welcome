@@ -1,5 +1,5 @@
 import React from 'react';
-import UserContext from '../../../contexts';
+import UserContext from '../../../contexts/UserContext';
 
 
 const UserMenu = () => {
