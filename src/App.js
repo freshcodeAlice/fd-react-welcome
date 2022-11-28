@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./components/Header";
 import Tree from "./components/Tree";
 import UserContext from "./contexts";
 
@@ -25,6 +26,7 @@ class App extends React.Component {
         console.log(UserContext);
         return (
             <UserContext.Provider value={[this.state.user, this.logOutCallback]}>
+                <Header />
                 <Tree/>
             </UserContext.Provider>
         )
