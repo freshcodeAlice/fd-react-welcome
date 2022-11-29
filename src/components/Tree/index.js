@@ -10,10 +10,10 @@ function Tree (props) {
 
   return (
    <ThemeContext.Consumer>
-      {(value)=>{
+      {([theme, setTheme])=>{
           const cn = cx(styles.container, {
-            [styles.darkTheme]: value === THEMES.DARK,
-            [styles.lightTheme]: value === THEMES.LIGHT
+            [styles.darkTheme]: theme === THEMES.DARK,
+            [styles.lightTheme]: theme === THEMES.LIGHT
           });
           return (
              <div className={cn}>
