@@ -38,7 +38,7 @@ class App extends React.Component {
             <ThemeContext.Provider value={[theme, this.changeThemeCallback]}>
                 <UserContext.Provider value={[user, this.logOutCallback]}>
                     <Header />
-                    <Tree/>
+                    <Tree />
                 </UserContext.Provider>
             </ThemeContext.Provider>
         )
