@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './SignUp.module.css';
 import {SCHEMA } from '../../schemas';
-import {Formik, Form, Field} from 'formik';
+import {Formik, Form, Field, ErrorMessage} from 'formik';
 
 function SignUpForm (props) {
 
@@ -23,6 +23,7 @@ function SignUpForm (props) {
             <Formik 
             initialValues={initialValues}
             onSubmit={formikSubmit}
+            validationSchema={SCHEMA}
             >
            {(formikProps) => {
             return (
@@ -31,19 +32,21 @@ function SignUpForm (props) {
                     name="firstName"
                     placeholder="firstName"
                     />
+                    <ErrorMessage name="firstName" component="p"/>
                     <Field 
                     name="lastName"
                     placeholder="lastName"
                     />
+                    <ErrorMessage name="lastName" />
                     <Field 
                     name="email"
                     placeholder="email"
                     />
-                     <Field 
-                    name="pass"
-                    placeholder="pass"
-                    />
-                    <button>Send</button>
+                    <ErrorMessage name="email" />
+                     <Field name="pass" 
+                        placeholder="email"/>
+                        <ErrorMessage name="pass" />
+                    <button type="submit">Send</button>
                 </Form>
             )
            }}
