@@ -10,7 +10,6 @@ class LoginForm extends React.Component{
     }
 
     changeHandler = ({target: {value, name}}) => {
-        // console.log(name, value)
         this.setState({
             [name]: value
         })
