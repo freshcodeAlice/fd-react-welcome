@@ -1,9 +1,18 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const MouseTracker = () => {
     const [coordinates, setCoordinates] = useState( {x: 0,
                                             y: 0} );
     const [count, setCount] = useState(0);
+
+    useEffect(()=>{
+        console.log('ефект навісили')
+        document.body.addEventListener('mousemove', handleMouseMove);
+        return () => {
+            console.log('ефект почистили');
+            document.body.removeEventListener('mousemove', handleMouseMove);
+        }
+    },[]);
 
     const handleMouseMove = ({clientX, clientY}) => {
         setCoordinates({
@@ -15,9 +24,9 @@ const MouseTracker = () => {
     const handleClick = () => {
         setCount(count+1)
     }
-
+    console.log('render');
     return (
-        <div onMouseMove={handleMouseMove}>
+        <div>
            <p>X: {coordinates.x}</p> 
            <p>Y: {coordinates.y}</p>
            <p>Counter: {count}</p>
