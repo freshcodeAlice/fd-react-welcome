@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect} from 'react';
+import React, {useCallback, useContext, useEffect, useMemo} from 'react';
 import Parent from './Parent';
 import styles from './Tree.module.css';
 import cx from 'classnames';
@@ -30,6 +30,18 @@ function Tree (props) {
       }, [changeTheme]);
 
 
+      function computedValue () {
+         let sum = 0;
+         for(let i=0; i<100000000; i++) {
+            sum = i**15;
+         }
+         return sum;
+      }
+
+      
+
+      const layoutValue = useMemo(computedValue, []);
+
 
                   return (
                       <div className={cn}>
@@ -37,6 +49,7 @@ function Tree (props) {
                          <p>Tree</p>
                          <button onClick={changeTheme}>change theme</button>
                          {memoizedFunc()}
+                         <input type="text" value={layoutValue} />
                         <Parent />
                       </div>
                   )
