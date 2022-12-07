@@ -14,7 +14,7 @@ function App(props) {
     return (
       <ThemeContext.Provider value={[theme, setTheme]}>
       <UserContext.Provider value={[user, setUser]}>
-        <Tree />
+        <Tree value="supervalue"/>
       </UserContext.Provider>
       </ThemeContext.Provider>
     )
