@@ -6,13 +6,14 @@ import UserDashboard from './components/UserDashboard';
 import CONSTANTS from "./constants";
 import UserLoader from "./components/UserLoader";
 import { getUsers } from "./api/user.js";
+import WindowSizer from "./components/WindowSizer";
 const {THEMES} = CONSTANTS;
 
 function App(props) {
 
 
     return (
-      <UserLoader />
+     <WindowSizer />
     )
 }
 
