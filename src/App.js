@@ -7,13 +7,14 @@ import CONSTANTS from "./constants";
 import UserLoader from "./components/UserLoader";
 import { getUsers } from "./api/user.js";
 import WindowSizer from "./components/WindowSizer";
+import SignForm from "./components/SignForm";
 const {THEMES} = CONSTANTS;
 
 function App(props) {
 
 
     return (
-     <WindowSizer />
+     <SignForm />
     )
 }
 
