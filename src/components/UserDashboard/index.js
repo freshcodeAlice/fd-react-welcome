@@ -43,7 +43,7 @@ function UserDashboard (props) {
                     <span>{page}</span>
                 <button onClick={next}>{'>'}</button>
                 {error && <div>Oops! Something goes wrong!</div> }
-                {users && <UsersList users={users}/>}
+                {users && <UsersList users={users} setUsers={setUsers}/>}
                  {isFetching && <Spiner />}
 
             </section>

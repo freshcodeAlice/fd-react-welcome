@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Tree from './components/Tree';
 import ThemeContext from "./contexts/ThemeContext";
 import UserContext from "./contexts/UserContext";
+import UserDashboard from './components/UserDashboard';
 import CONSTANTS from "./constants";
 const {THEMES} = CONSTANTS;
 
@@ -14,7 +15,7 @@ function App(props) {
     return (
       <ThemeContext.Provider value={[theme, setTheme]}>
       <UserContext.Provider value={[user, setUser]}>
-        <Tree value="supervalue"/>
+            <UserDashboard />
       </UserContext.Provider>
       </ThemeContext.Provider>
     )
